@@ -50,7 +50,6 @@ jobs:
     - name: Deploy to EKS
       run: |
         cd kube
-        kubectl config current-context
         kubectl apply -f deployment.yaml
         kubectl apply -f service.yaml
         
