@@ -1,34 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: orm-frontend
   labels:
-    app: orm-frontend
+    app: frontend-app
+  name: frontend-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: orm-frontend
+      app: frontend-app
   template:
     metadata:
       labels:
-        app: orm-frontend
+        app: frontend-app
     spec:
       containers:
-        - name: orm-frontend
-          image: anyijonathan/node-app:de30ae0c5d5e2d6d3c90265d296a5f68b9f047c6
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 80
-          envFrom:
-            - secretRef:
-                name: orm-frontend-secrets
+      - image: anyijonathan/node-app:de30ae0c5d5e2d6d3c90265d296a5f68b9f047c6
+        imagePullPolicy: Always
+        name: frontend-app
       imagePullSecrets:
-        - name: docker-cred
-      resources:
-        requests:
-          memory: 300Mi
-          cpu: 300m
-        limits:
-          memory: 500Mi
-          cpu: 400m
+      - name: docker-cred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  type: NodePort
+  selector:
+    app: frontend-app
+  ports:
+    - port: 80
+      targetPort: 5000
+      nodePort: 30007
