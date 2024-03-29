@@ -1,0 +1,57 @@
+@import "../Shared/colors";
+
+.container {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  .label {
+    margin-left: 1.75rem;
+    font-size: 14px;
+    line-height: 1.43;
+  }
+  &:hover {
+    ~ .indicator {
+      background-color: #ccc;
+    }
+  }
+  .input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    &:checked {
+      ~ .indicator {
+        background-color: $primaryColor50;
+        border: 0.5px solid $primaryColor600;
+        &::after {
+          content: "";
+          display: block;
+          width: 0.375rem;
+          height: 0.375rem;
+          background-color: $primaryColor600;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  .indicator {
+    top: 0;
+    left: 0;
+    position: absolute;
+    // opacity: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 0.5px solid $grayColor400;
+    // transition: ;
+    transition-property: background-color, border-color, color, fill, stroke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::after {
+      content: "";
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@import "../Shared/colors";
+@import "../Shared/utils";
+
+.dropdown {
+  position: relative;
+  // width: 156px;
+  .children {
+    width: 100%;
+  }
+
+  .dropdownContent {
+    width: 100%;
+    // width: max-content;
+    position: absolute;
+    top: calc(100% + 5px);
+    z-index: 1000;
+    background: #ffffff;
+    // border: 1px solid rgba(84, 95, 125, 0.14);
+    box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.1),
+      0px 4px 6px -2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+
+    &.contentWidth {
+      width: max-content;
+    }
+
+    &.left {
+      left: 0;
+    }
+    &.right {
+      right: 0;
+    }
+  }
+}
+
+.dropdownContentContainer {
+  padding: 10px 16px;
+  padding-bottom: 0px;
+  .item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.43;
+    color: $grayColor700;
+    margin-bottom: 20px;
+  }
+  @include breakpoint(max-425){
+    padding: 0;
+    width: 300px;
+    overflow: visible;
+    overflow-x: scroll;
+  }
+}
+
+.selectDropDownButton {
+  color: $grayColor500 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  font-weight: 500 !important;
+}

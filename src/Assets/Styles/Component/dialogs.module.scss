@@ -1,0 +1,35 @@
+@import "../Shared/colors";
+@import "../Shared/utils";
+
+.dialogContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  .title {
+    font-size: 18px;
+    color: $grayColor900;
+    font-weight: 500;
+    margin: 20px 0 8px 0;
+  }
+  .info {
+    font-size: 14px;
+    color: $grayColor500;
+    font-weight: 1.43;
+    margin-bottom: 32px;
+    max-width: 352px;
+    text-align: center;
+  }
+  .reasonContainer {
+    width: 100%;
+    margin-bottom: 32px;
+    margin-top: -12px;
+  }
+
+  .actionsContainer {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+  }
+}

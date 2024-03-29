@@ -1,0 +1,104 @@
+@import "../Shared/colors";
+@import "../Shared/utils";
+
+.typeAndDatePicker {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+// .tableContainer {
+//   background-color: white;
+//   border-radius: 8px;
+//   border: 1px solid $grayColor200;
+//   margin-bottom: 24px;
+//   .header {
+//     padding: 20px 24px;
+//     border-bottom: 1px solid $grayColor200;
+//   }
+//   .rangeSelectorContainer {
+//     padding: 14px 16px;
+//     display: flex;
+//     justify-content: space-between;
+//     gap: 8px;
+//     border-bottom: 1px solid $grayColor200;
+//     flex-wrap: wrap;
+//     .typeAndDatePicker {
+//       display: flex;
+//       gap: 8px;
+//       flex-wrap: wrap;
+//     }
+//   }
+//   .filtersContainer {
+//     padding: 14px 16px;
+//     display: flex;
+//     justify-content: space-between;
+//     gap: 8px;
+//     border-bottom: 1px solid $grayColor200;
+//     flex-wrap: wrap;
+//   }
+// }
+
+.selectedRangeContainer {
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  border-bottom: 1px solid $grayColor200;
+  flex-wrap: wrap;
+  align-items: center;
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .title {
+      font-weight: 500;
+      font-size: 16px;
+      color: $grayColor900;
+      line-height: 1.56;
+    }
+    .subTitle {
+      font-size: 14px;
+      color: $grayColor500;
+      line-height: 1.43;
+    }
+  }
+}
+
+.prepareReportContainer {
+  padding: 40px 24px 48px 24px;
+  display: flex;
+  flex-direction: column;
+  @include flexCenter;
+  .iconRipple {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $primaryColor50;
+    @include flexCenter;
+    .iconRippleInner {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: $primaryColor100;
+      @include flexCenter;
+      path {
+        stroke: $primaryColor700;
+      }
+    }
+  }
+  .title {
+    margin: 16px 0 4px 0;
+    font-weight: 500;
+    font-size: 16px;
+    color: $grayColor900;
+  }
+  .subTitle {
+    font-size: 14px;
+    color: $grayColor500;
+    line-height: 1.43;
+    max-width: 352px;
+    text-align: center;
+  }
+}

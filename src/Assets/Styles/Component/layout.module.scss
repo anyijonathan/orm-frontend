@@ -1,0 +1,28 @@
+@import "../Shared/colors";
+@import "../Shared/utils";
+
+.sidebarAndContentcontainer {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  @include breakpoint(menu-max-width){
+    height: auto;
+    flex-direction: column;
+  }
+}
+.contentContainer {
+  box-sizing: border-box;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  background: $grayColor50;
+  padding: 22px 32px;
+  padding-bottom: 0;
+  overflow: scroll;
+  @include breakpoint(menu-max-width){
+    margin-top: 54px;
+    padding: 13px;
+  }
+}

@@ -1,0 +1,55 @@
+@import "../../Shared/utils";
+@import "../../Shared/colors";
+
+.radioOptionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modalRadioOptionsContainer {
+  display: flex;
+  align-items: start;
+  // justify-content: space-between;
+  gap: 64px;
+  .labelsContainer {
+    // flex: ;
+    width: 280px;
+    .title {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.43;
+      color: $grayColor600;
+      // flex: 1;
+    }
+    .subtitle {
+      color: $grayColor500;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+  .modalRadioOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    // flex: 1;
+    .radioOptionLabel {
+      font-weight: 500;
+    }
+  }
+}
+
+.actionsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-top: 24px;
+}
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  * {
+    width: fit-content;
+  }
+}

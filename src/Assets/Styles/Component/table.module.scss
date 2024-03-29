@@ -1,0 +1,82 @@
+@import "../Shared/colors";
+
+.LTable {
+  overflow-x: scroll;
+  background-color: white;
+  table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  .tableHead {
+    background-color: $grayColor50;
+    border-bottom: 1px solid $grayColor200;
+  }
+
+  tr {
+    border-bottom: 1px solid rgba($primaryColor, 0.1);
+  }
+  td {
+    padding: 16px 0;
+    font-size: 14px;
+  }
+
+  th:not(:last-child),
+  td:not(:last-child),
+  th:last-child,
+  td:last-child {
+    padding-left: 24px;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 14px;
+  }
+
+  th {
+    font-size: 12px;
+    font-weight: 500;
+    color: $grayColor500;
+    line-height: 1.5;
+    padding: 13px 0;
+  }
+}
+
+.selectSize {
+  font-family: inherit;
+  border-radius: 4px;
+  background: rgba($primaryColor, 0.1);
+  padding: 5px 12px;
+  color: $primaryColor;
+  font-weight: 500;
+  font-size: 14px;
+  height: 30px;
+  width: 80px;
+  margin: 0 10px;
+}
+
+.tableBoldData {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $grayColor900;
+}
+.tableNormalData {
+  font-size: 14px;
+  line-height: 1.5;
+  color: $grayColor900;
+}
+.tableLightData {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $grayColor900;
+  width: 300px; 
+  word-break: break-all;
+}	
+
+.tableRoundBox{
+  border-radius: 8px;
+  border: 1px solid $grayColor200;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.10);
+}

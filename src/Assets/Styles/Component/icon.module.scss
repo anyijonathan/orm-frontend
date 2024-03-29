@@ -1,0 +1,74 @@
+@import "../Shared/colors";
+@import "../Shared/utils";
+
+.iconRipple {
+  // width: 48px;
+  // height: 48px;
+  border-radius: 50%;
+  background-color: $primaryColor50;
+  &.primary {
+    background-color: $primaryColor50;
+    .iconRippleInner {
+      background-color: $primaryColor100;
+      path {
+        stroke: $primaryColor700;
+      }
+    }
+  }
+  &.error {
+    background-color: $errorColor50;
+    .iconRippleInner {
+      background-color: $errorColor100;
+      path {
+        stroke: $errorColor600;
+      }
+    }
+  }
+  &.success {
+    background-color: $successColor50;
+    .iconRippleInner {
+      background-color: $successColor100;
+      path {
+        stroke: $successColor600;
+      }
+    }
+  }
+  @include flexCenter;
+  .iconRippleInner {
+    // width: 32px;
+    // height: 32px;
+    margin: 10px;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: $primaryColor100;
+    @include flexCenter;
+    path {
+      stroke: $primaryColor700;
+    }
+  }
+}
+
+.iconBG {
+  @include flexCenter;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: $primaryColor25;
+  &.primary {
+    background-color: $primaryColor25;
+    path {
+      stroke: $primaryColor700;
+    }
+  }
+  &.error {
+    background-color: $errorColor50;
+    path {
+      stroke: $errorColor600;
+    }
+  }
+  &.success {
+    background-color: $successColor50;
+    path {
+      stroke: $successColor600;
+    }
+  }
+}

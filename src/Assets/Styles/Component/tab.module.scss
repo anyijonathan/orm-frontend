@@ -1,0 +1,53 @@
+@import "../Shared/colors";
+@import "../Shared/utils";
+
+.container {
+  box-sizing: border-box;
+  display: flex;
+  font-size: 14px;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  .tabItem {
+    padding: 10px 16px;
+    font-weight: 500;
+    line-height: 1.43;
+    color: $grayColor700;
+    border-top: 1px solid $grayColor300;
+    border-bottom: 1px solid $grayColor300;
+    border-right: 1px solid $grayColor300;
+    cursor: pointer;
+    white-space: nowrap;
+    @include breakpoint(max-425){
+      padding: 10px 10px;
+    }
+    
+    &.active {
+      border-color: $primaryColor50;
+      background: $primaryColor25;
+      color: $primaryColor700;
+    }
+  }
+
+  .tabItem:first-child {
+    border-left: 1px solid $grayColor300;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    &.active {
+      border-color: $primaryColor50;
+    }
+  }
+
+  .tabItem:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    &.active {
+      border-color: $primaryColor50;
+    }
+  }
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}

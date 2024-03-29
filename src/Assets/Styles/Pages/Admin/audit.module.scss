@@ -1,0 +1,53 @@
+@import "../../Shared/utils";
+@import "../../Shared/colors";
+@import "../../Shared/breakpoints";
+
+.auditTableHeaderDetails {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include breakpoint(menu-max-width){
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .title {
+      color: $grayColor900;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .subtitle {
+      color: $grayColor500;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+
+  .dropdowns {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+    flex-wrap: wrap;
+    align-items: center;
+    @include breakpoint(menu-max-width){
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.auditTableHeaderDetailsSecond {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include breakpoint(xs){
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

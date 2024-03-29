@@ -1,0 +1,344 @@
+@import "../Shared/utils";
+@import "../Shared/colors";
+@font-face {
+  font-family: "Gotham";
+  src: url("../../Fonts/gotham/Gotham-Book.ttf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../../Fonts/gotham/Gotham-Book.ttf") format("opentype");
+  font-weight: 500;
+}
+
+
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../../Fonts/gotham/Gotham-Book.ttf") format("opentype");
+  font-weight: 700;
+}
+
+body {
+  font-family: "Gotham", "Inter", system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  box-sizing: border-box;
+  /* color-scheme: light dark; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.authLogo {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 40px;
+  align-self: center;
+}
+.authLogoLarge {
+  border-radius: 10px;
+}
+.loginMainContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background: url(../../Images/loginBg.jpg);
+  background-size: 100%;
+  background-position: center center;
+}
+.loginPanContainer{
+  border-radius: var(--Spacing-16, 16px);
+  border: 1px solid var(--White, #FFF);
+  // opacity: 0.6;
+  background: var(--Gray-400, #98A2B3);
+  backdrop-filter: blur(25px);
+  display: flex;
+  flex-direction: row;
+  width: 520px;
+  margin-left: 15%;
+  border-radius: 18px;
+  // overflow: hidden;
+  border: 1px solid $grayColor300;
+  @media(max-width:575.98px) {
+    justify-content: center;
+  }
+  .leftPanLogin{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 77px 70px 100px;
+    justify-content: center;
+    @media(max-width:575.98px) {
+      width: 90%;
+    }
+    @media (min-width: 576px) and (max-width:767.98px){
+      width: 100%;
+    }
+    @media (min-width: 768px) and (max-width:991.98px) { 
+      margin: 0 20px;
+      width: 45%;
+     }
+  }
+  .rightPanLogin{
+    display: none !important;
+    background: url(../../Images/LoginSideBG.jpg);
+    width: 50%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media(max-width:575.98px) {
+      display: none;
+    }
+    @media (min-width: 576px) and (max-width:767.98px) {
+      display: none;
+    }
+    @media (min-width: 768px) and (max-width:991.98px) { 
+      width: 55%;
+     }
+  }
+}
+.authContainer {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  // background: linear-gradient(
+  //     125.99deg,
+  //     rgba(0, 0, 0, 0.75) 40.07%,
+  //     rgba(0, 0, 0, 0) 110.76%
+  //   ),
+  //   url(../../Images/authBackground.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  // @include flexCenter;
+  display: flex;
+  align-items: center;
+  justify-content: unset;
+}
+
+.authBody {
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  position: relative;
+  margin: 0 !important;
+  // background-color: rgba($grayColor400, 0.6);
+  // backdrop-filter: blur(5px);
+}
+
+@media screen and (max-width: 600px) {
+  // .authBody {
+  //   // margin-left: 20px;
+  //   // padding: 77px 20px 81px 20px;
+  // }
+}
+
+.authHeader {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 38px;
+  text-align: center;
+}
+
+.authTagline {
+  font-weight: 400;
+  font-size: 16px;
+  color: white;
+  margin-top: 6px;
+  text-align: center;
+  p{text-align: center;}
+  &.lockedOut {
+    color: #000;
+    margin-top: 40px;
+    text-align: center;
+    line-height: 24px;
+
+    .email {
+      font-weight: 500;
+      // color: white;
+      color: $primaryColor700;
+      cursor: pointer;
+    }
+  }
+}
+.authCheck{
+  color: $successColor600;
+}
+.authFailed{
+  color: $errorColor500;
+}
+.form-label {
+  margin-bottom: 0.3rem;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+._button_qptay_1._disabled_qptay_60{
+  background: $primaryColor100 !important;
+}
+.input-group-text{
+  border-left: 0px;
+  background: none;
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: 1px solid  #98A2B3;
+  background:  #FFF;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  font-size: 16px;
+  border-left: 0px !important;
+}
+.brdr-removed{
+  border-right: 0px !important;
+}
+.shoHide{
+  cursor: pointer;
+}
+.sendCodeBtn{
+  max-width: 220px;
+}
+.authFormContainer {
+  margin-top: 26px;
+  width: 100%;
+}
+
+.authInput {
+  margin-bottom: 20px;
+}
+
+.authFormGroup {
+  label {
+    color: white;
+  }
+}
+
+.loginForgotPassword {
+  padding: 24px 0;
+  text-align: right;
+}
+.twofaResend {
+  padding-top: 32px;
+  text-align: center !important;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.43;
+  a{
+    color: #fff;
+  }
+}
+
+.twoFaEmail {
+  font-weight: 500;
+}
+
+.authHeaderIconContainer {
+  height: 88px;
+  width: 88px;
+  border-radius: 100px;
+  padding: 24px;
+  background-color: #f9eeff;
+  @include flexCenter;
+  margin: 0px auto 24px;
+  &.success {
+    background-color: $successColor50;
+  }
+}
+
+.backToPage {
+  @include flexCenter;
+  margin-top: 32px;
+  cursor: pointer;
+  .text {
+    margin-left: 12.17px;
+    font-weight: 500;
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.43;
+  }
+  path {
+    stroke: #667085;
+  }
+}
+
+.lockedOutIcon {
+  text-align: center;
+}
+
+.pointerSVG {
+  position: absolute;
+  right: -58%;
+  bottom: -5%;
+}
+
+.pincode-input-container {
+  @include flexCenter;
+  font-family: inherit !important;
+  padding: 0 !important;
+  gap: 12px !important;
+  margin-bottom: 32px !important;
+  .pincode-input-text {
+    font-family: inherit !important;
+    padding: 0 !important;
+    margin: 0 2px;
+    text-align: center;
+    border: 1px solid fade-out($primaryColor, 0.7) !important;
+    border-radius: 8px;
+    background: white !important;
+    width: 33% !important;
+    height: 80px !important;
+    font-size: 48px !important;
+    line-height: 1.25 !important;
+    font-weight: 500 !important;
+    color: #7d1ab5;
+  }
+  .pincode-input-text:focus {
+    outline: none;
+    box-shadow: 0px 0px 1px 2px fade-out($primaryColor, 0.7) !important;
+  }
+}
+
+
+._button_w3be5_1._disabled_w3be5_60{
+  background: $primaryColor100 !important;
+}
+.orm{
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 38px;
+  text-align: center;
+}
+.fcmbText{
+  margin-right: 8px;
+}  
+.form-label{
+  color: #fff;
+}
+.generalError{
+  color: #fff;
+  text-align: center;
+}
+.hda{
+  position: absolute;
+  bottom: -115px;
+  right: -282px;
+}
+.form-control-auth{
+  flex: 1 1 auto;
+  height: 44px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border-width: 1px 0px 1px;
+  border: 1px solid  #98A2B3;
+  background:  #FFF;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}

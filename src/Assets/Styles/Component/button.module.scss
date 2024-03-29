@@ -1,0 +1,233 @@
+@import "../Shared/colors";
+@import "../Shared/utils";
+
+@mixin setBgColor($baseColor) {
+  background-color: $baseColor;
+
+  &:hover {
+    background-color: darken($baseColor, 5%);
+  }
+}
+
+.button {
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  box-sizing: border-box;
+  display: inline-block;
+  color: white;
+  // letter-spacing: 0.1em;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+  outline: none;
+  width: 100%;
+  &.small{
+    padding: 2px 9px;
+    width: auto;
+  }
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &.primary {
+    @include setBgColor($primaryColor);
+  }
+  &.error {
+    @include setBgColor($errorColor600);
+  }
+  &.purple {
+    @include setBgColor($primaryColor25);
+
+  }
+  // &.contained {
+  // }
+
+  &.outlined {
+    @include setBgColor(transparent);
+    &.primary {
+      color: $primaryColor;
+      border: 1px solid $primaryColor;
+    }
+    &.error {
+      color: $errorColor600;
+      border: 1px solid $errorColor600;
+    }
+    &.neutral {
+      color: $grayColor700;
+      border: 1px solid $grayColor300;
+    }
+    &.disabled{
+      background: $grayColor300;
+      color: $grayColor500;
+      border: 1px solid $grayColor300;
+      &:hover{
+        background:  $grayColor300
+      }
+    }
+  }
+
+  &.text {
+    @include setBgColor(transparent);
+    color: $primaryColor;
+    border: none;
+    box-shadow:none !important;
+  }
+  &.export {
+    color: $primaryColor700;
+    border: none;
+  }
+
+
+  &.disabled {
+    background-color: $primaryColor200;
+
+    &:hover {
+      background-color: $primaryColor200;
+      cursor: not-allowed;
+    }
+  }
+
+  &.Bloading {
+    position: relative;
+    padding-right: 25px;
+    &.outlined::after {
+      border-right-color: $primaryColor !important;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 2px solid transparent;
+      border-right-color: white;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      animation: Krotate 0.5s linear infinite;
+    }
+  }
+
+  @keyframes Krotate {
+    to {
+      transform: translateY(-50%) rotateZ(360deg);
+    }
+  }
+}
+
+.textButton {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.43;
+  color: $primaryColor;
+}
+
+.iconButtonContainer {
+  font-family: "Gotham", sans-serif;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 8px;
+  font-size: 14px;
+  padding: 10px 16px;
+  border: 1px solid $grayColor300;
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  white-space: nowrap;
+  @include breakpoint(max-425){
+    padding: 10px 7px;
+  }
+  &.left {
+    flex-direction: row;
+  }
+  &.right {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  &.textIconButtonOnly {
+    @include setBgColor(transparent);
+    color: red;
+    border: none;
+    padding: 10px 0 !important;
+    box-shadow: none !important;
+    .title {
+      color: $primaryColor700;
+    }
+    path {
+      stroke: $primaryColor700;
+    }
+  }
+  &.remove {
+    @include setBgColor(transparent);
+    // color: red;
+    width: auto;
+    border: none;
+    padding: 10px 0 !important;
+    box-shadow: none !important;
+    .title {
+      color: $errorColor700;
+    }
+    path {
+      stroke: $errorColor700;
+    }
+  }
+  &.primary {
+    &.contained {
+      background-color: $primaryColor700;
+      .title {
+        color: white;
+      }
+      path {
+        stroke: white;
+      }
+    }
+
+    &.outlined {
+      .title {
+        color: $primaryColor700;
+      }
+      path {
+        stroke: $primaryColor700;
+      }
+    }
+  }
+
+  .title {
+    font-size: 14px;
+    font-weight: 500;
+    color: $grayColor700;
+    line-height: 1.43;
+  }
+  path {
+    stroke: $grayColor700;
+  }
+  .red{
+    color: red;
+  }
+  &:disabled {
+    .title {
+      color: $disabledColor;
+    }
+    path {
+      stroke: $disabledColor;
+    }
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+  @include rotate180(".dropdownIcon");
+}

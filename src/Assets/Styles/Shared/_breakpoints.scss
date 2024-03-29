@@ -1,0 +1,40 @@
+@mixin forTablets {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+
+$breakpoints:(
+  "xxs": "max-width:320px",
+  "xs": "max-width:575.98px",
+  "sm": "(min-width: 576px) and (max-width:767.98px)",
+  "md": "(min-width: 768px) and (max-width:991.98px)",
+  "lg": "(min-width: 992px) and (max-width:1199.98px)",
+  "xl": "(min-width: 1200px) and (max-width:1399.98px)",
+  "xxl": "min-width: 1400px",
+  "md-max-width": "max-width: 992px",
+  "lg-max-width": "max-width: 1200px",
+  "custom-max-width": "max-width: 1010px",
+  "menu-max-width": "max-width: 768px",
+  "max-1024": "max-width: 1024px",
+  "menu-min-width": "min-width: 769px",
+  "max-425": "max-width: 425px",
+);
+
+@mixin breakpoint ($user-value){
+  $my-map: map-get($breakpoints, $user-value);
+  @if $my-map{
+    @media(#{$my-map}){
+      @content
+    }
+  }
+  @else{
+    @error "Seems like the breakpoint #{$user-value} isn't define yet"
+  }
+}
+.manageAdvFilter{
+  @include breakpoint(max-425){
+    flex-direction: column;
+  }
+}

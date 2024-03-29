@@ -1,0 +1,178 @@
+@import "../Shared/colors";
+
+@mixin dynamicArrowColors {
+  &.primary {
+    path {
+      stroke: $primaryColor700;
+    }
+  }
+  &.success {
+    path {
+      stroke: $successColor700;
+    }
+  }
+  &.error {
+    path {
+      stroke: $errorColor700;
+    }
+  }
+  &.warning {
+    path {
+      stroke: $warningColor600;
+    }
+  }
+  &.completed {
+    path {
+      stroke: $successColor600;
+    }
+  }
+  &.in-progress {
+    path {
+      stroke: $primaryColor700;
+    }
+  }
+  &.pending {
+    path {
+      stroke: $warningColor500-2;
+    }
+  }
+  &.failed {
+    path {
+      stroke: $warningColor700;
+    }
+  }
+}
+
+@mixin dynamicIconColors {
+  &.primary {
+    path {
+      fill: $primaryColor700;
+    }
+  }
+  &.success {
+    path {
+      fill: $successColor700;
+    }
+  }
+  &.error {
+    path {
+      fill: $errorColor700;
+    }
+  }
+  &.warning {
+    path {
+      fill: $warningColor600;
+    }
+  }
+  &.completed {
+    path {
+      fill: $successColor600;
+    }
+  }
+  &.in-progress {
+    path {
+      fill: $primaryColor700;
+    }
+  }
+  &.pending {
+    path {
+      fill: $warningColor500-2;
+    }
+  }
+  &.failed {
+    path {
+      fill: $warningColor700;
+    }
+  }
+}
+
+@mixin dynamicColors {
+  &.primary {
+    color: $primaryColor700;
+  }
+  &.success {
+    color: $successColor700;
+  }
+  &.error {
+    color: $errorColor700;
+  }
+  &.warning {
+    color: $warningColor600;
+  }
+  &.completed {
+      color: $successColor600;
+  }
+  &.in-progress {
+      color: $primaryColor700;
+  }
+  &.pending {
+      color: $warningColor500-2;
+  }
+  &.failed {
+      color: $warningColor700;
+  }
+}
+
+.container {
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 0;
+  border: 1px solid $grayColor200;
+  background-color: white;
+  cursor: pointer;
+  overflow: hidden;
+  .content {
+    padding: 24px;
+    background-color: $orangeColor50;
+    // margin-bottom: 12px;
+    .header {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      gap: 8px;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+      border-bottom: 1px dashed $grayColor400;
+      @include dynamicIconColors;
+      .title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        // color: $grayColor700;
+        @include dynamicColors;
+      }
+    }
+    .count {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: $grayColor700;
+      @include dynamicColors;
+    }
+  }
+  .reportBreakdown{
+    padding: 16px;
+  }
+  .reportBreakdownTitle{
+    color: $grayColor500;
+    font-weight: 500;
+  }
+  .reportBreakdownValue{
+    color: $grayColor700;
+    font-weight: 300;
+  }
+  .linkContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 8px;
+    cursor: pointer;
+    @include dynamicArrowColors;
+    .linkText {
+      font-size: 12px;
+      line-height: 1.5;
+      color: $primaryColor700;
+      @include dynamicColors;
+    }
+  }
+}

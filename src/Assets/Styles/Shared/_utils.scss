@@ -1,0 +1,136 @@
+@import "./breakpoints";
+@import "./colors";
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin scollContent {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@mixin navAndContentPadding {
+  padding: 0 60px;
+  @include forTablets {
+    padding: 0 30px;
+  }
+}
+
+@mixin cardContainer {
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  border-radius: 4px;
+}
+
+@mixin rotate180($class) {
+  $animation-name: unique-id();
+  $animation-name-reverse: unique-id();
+  @keyframes #{$animation-name} {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  }
+
+  @keyframes #{$animation-name-reverse} {
+    from {
+      transform: rotate(180deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  #{$class}.opened {
+    animation: $animation-name 200ms ease-in-out forwards;
+  }
+  #{$class}.closed {
+    animation: $animation-name-reverse 200ms ease-in-out forwards;
+  }
+}
+
+@mixin statusChipBgColors {
+  &.success {
+    background-color: $successColor50;
+  }
+  &.error {
+    background-color: $errorColor100;
+  }
+  &.warning {
+    background-color: $warningColor500;
+  }
+  &.primary {
+    background-color: $primaryColor25;
+  }
+}
+
+@mixin statusColorsBg {
+  &.success {
+    background-color: $successColor700;
+  }
+  &.error {
+    background-color: $errorColor700;
+  }
+  &.warning {
+    background-color: $warningColor700;
+  }
+  &.primary {
+    background-color: $primaryColor700;
+  }
+}
+
+@mixin statusColors {
+  &.success {
+    color: $successColor700;
+  }
+  &.error {
+    color: $errorColor700;
+  }
+  &.warning {
+    color: $warningColor700;
+  }
+  &.primary {
+    color: $primaryColor700;
+  }
+}
+.cardResp{
+  flex-direction: column;
+  @include breakpoint(xl){
+    min-height: 203px;
+    display: flex;
+  }
+  @include breakpoint(lg){
+    margin-bottom: 10px;
+  }
+  @include breakpoint(md-max-width){
+    margin-bottom: 10px;
+  }
+}
+
+
+@include breakpoint(custom-max-width){
+  .tableResp{
+    flex-direction: column;
+    align-items: flex-start !important;
+    display: flex;
+  }
+  
+  .details{
+    margin-bottom: 10px;
+  }
+
+  @include breakpoint(custom-max-width){
+    .dropdowns{
+      width: 100%;
+      display: flex;
+      gap: 15px;
+      justify-content: space-between;
+    }
+  }
+}

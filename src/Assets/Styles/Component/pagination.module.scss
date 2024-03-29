@@ -1,0 +1,51 @@
+@import "../Shared/colors";
+
+@import "../Shared/breakpoints";
+
+.paginateContainer {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 25px 24px 30px 24px;
+  @include breakpoint(xs){
+    overflow-x: auto;
+    flex-direction: column;
+  }
+}
+
+.paginateButton {
+  all: unset;
+  background: rgba($primaryColor, 0.1);
+  border-radius: 4px;
+  padding: 6.4px 8.71px;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &:last-child {
+    margin-left: 10px;
+  }
+
+  &:first-child {
+    margin-right: 10px;
+  }
+}
+
+.pageNumber {
+  cursor: pointer;
+  padding: 10px 17px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $grayColor500;
+}
+
+.activePage {
+  color: $primaryColor600;
+  border-radius: 8px;
+  background-color: $primaryColor25;
+}
