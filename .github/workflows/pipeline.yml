@@ -49,23 +49,10 @@ jobs:
         version: 'v1.24.0'
       id: install
 
-    - name: Update kube config
-      run: aws eks update-kubeconfig --name eks-cluster-1
-
-
-    - name: auth to dockerhub
-      run: |
-         kubectl create secret docker-registry docker-cred \
-         --docker-server=https://index.docker.io/v1/ \
-         --docker-username=anyijonathan \
-         --docker-password=Jonathan10.   
+    
 
   
 
-    - name: Deploy to EKS
-      run: |
-        cd kube
-        kubectl apply -f deployment.yaml
        
 
     
