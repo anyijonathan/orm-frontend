@@ -15,7 +15,7 @@ spec:
         app: frontend-app
     spec:
       containers:
-      - image: anyijonathan/node-app:6470b35eea62fa0875840ce262fc7a6e93915012
+      - image: anyijonathan/node-app:${TAG}
         imagePullPolicy: Always
         name: frontend-app
       imagePullSecrets:
