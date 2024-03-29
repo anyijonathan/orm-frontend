@@ -26,10 +26,10 @@ kind: Service
 metadata:
   name: my-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: frontend-app
   ports:
     - port: 80
-      targetPort: 5000
+      targetPort: 3000
       nodePort: 30007
