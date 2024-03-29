@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orm-frontend
+  labels:
+    app: orm-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orm-frontend
+  template:
+    metadata:
+      labels:
+        app: orm-frontend
+    spec:
+      containers:
+        - name: orm-frontend
+          image: anyijonathan/node-app:912c22ec146a0edcfbef4c7ec422430bcc765d55
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          envFrom:
+          - secretRef:
+              name: orm-frontend-secrets
+          resources:
+            requests:
+              memory: 300Mi
+              cpu: 300m
+            limits:
+              memory: 500Mi
+              cpu: 400m
