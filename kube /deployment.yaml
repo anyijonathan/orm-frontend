@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: orm-frontend
-          image: anyijonathan/node-app:912c22ec146a0edcfbef4c7ec422430bcc765d55
+          image: anyijonathan/node-app:${{ github.sha }}
           imagePullPolicy: Always
           ports:
             - containerPort: 80
