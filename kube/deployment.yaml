@@ -23,6 +23,8 @@ spec:
           envFrom:
             - secretRef:
                 name: orm-frontend-secrets
+          imagePullSecrets:
+          - name: docker-cred
           resources:
             requests:
               memory: 300Mi
