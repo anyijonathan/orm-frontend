@@ -30,12 +30,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: AKIA47CR24VEDTFP3DJE
-        aws-secret-access-key: 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
-        aws-region: us-east-1
+    
 
     - name: Checkout code
       uses: actions/checkout@v3
