@@ -37,8 +37,10 @@ jobs:
       
     - name: set env for tagging image
       run: |
-        tag = git rev-parse HEAD   
-        echo tag
+        tag=$(git rev-parse HEAD) 
+        #export TAG=$tag
+        echo $tag
+        
 
     - name: Install kubectl
       uses: azure/setup-kubectl@v2.0
