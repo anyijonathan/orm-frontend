@@ -49,9 +49,9 @@ jobs:
 
     - name: Deploy to EKS
       run: |
-        cd orm-frontend/kube 
-        kubectl apply -f deployment.yaml
-        kubectl apply -f service.yaml
+        ls -a
+        #kubectl apply -f deployment.yaml
+        #kubectl apply -f service.yaml
         
       
 
