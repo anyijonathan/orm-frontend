@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker login
+      env:
+        DOCKER_USER: anyijonathan
+        DOCKER_PASSWORD: Jonathan10.
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag anyijonathan/node-app:${{ github.sha }}
+      
+    - name: Docker Push
+      run: docker push anyijonathan/node-app:${{ github.sha }}
