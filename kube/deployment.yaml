@@ -17,18 +17,18 @@ spec:
       containers:
         - name: orm-frontend
           image: anyijonathan/node-app:de30ae0c5d5e2d6d3c90265d296a5f68b9f047c6
-          imagePullPolicy: Always  # Consider using IfNotPresent for efficiency
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           envFrom:
             - secretRef:
                 name: orm-frontend-secrets
-          imagePullSecrets:
-            - name: docker-cred
-          resources:
-            requests:
-              memory: 300Mi
-              cpu: 300m
-            limits:
-              memory: 500Mi
-              cpu: 400m
+      imagePullSecrets:
+        - name: docker-cred
+      resources:
+        requests:
+          memory: 300Mi
+          cpu: 300m
+        limits:
+          memory: 500Mi
+          cpu: 400m
