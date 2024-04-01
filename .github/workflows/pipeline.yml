@@ -36,11 +36,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: set env for tagging image
-        run: |
-          tag:$(git rev-parse HEAD) 
-          export TAG=$tag
-          #echo $tag
+    
 
       - name: Deploy to EKS
 
